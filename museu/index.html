@@ -1,15 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-	<meta charset="UTF-8"/>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu multitemático</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-	<h1>Museu Virtual do PIM</h1>
 
-	<h2>Página inical</h2>
-	<p>
-		Servidor do Museu Virtual do PIM
-	</p>
+   <header>
+       <h1>Museu multitemático</h1>
+       <h2>Nome da obra</h2>
+   </header>
+
+   <!-- Container para exibir obras -->
+   <div id="obras"></div>
+
+   <div id="navegacao">
+       <div id="esquerda" class="link-div" onclick="navegarObra(-1)">
+           Anterior
+       </div>
+
+       <div id="direita" class="link-div" onclick="navegarObra(1)">
+           Próxima
+       </div>
+   </div>
+
+   <div id="descricao" class="descricao"></div>
+
+   <script src="obras.js"></script>
+   <script>
+       var indiceObraAtual = 0;
+
+       function popularObra(indice) {
+           var obra = obrasJSON[indice];
+           var obrasContainer = document.getElementById("obras");
+           obrasContainer.style.backgroundImage = "url(" + obra.imagem + ")";
+           obrasContainer.innerHTML = ""; // Remova essa linha se quiser manter a tag <img> visível
+
+           var descricaoDiv = document.getElementById("descricao");
+           descricaoDiv.textContent = obra.descricao;
+       }
+
+       function navegarObra(direcao) {
+           indiceObraAtual += direcao;
+
+           // Verifica se ultrapassou os limites do array
+           if (indiceObraAtual < 0) {
+               indiceObraAtual = obrasJSON.length - 1;
+           } else if (indiceObraAtual >= obrasJSON.length) {
+               indiceObraAtual = 0;
+           }
+
+           popularObra(indiceObraAtual);
+       }
+
+       // Chama a função para popular a primeira obra
+       popularObra(indiceObraAtual);
+   </script>
+
 </body>
 </html>
