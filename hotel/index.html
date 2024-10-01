@@ -3,31 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Hospedagem - Protótipo</title>
+    <title>Sistema de Hospedagem</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
-        .container { width: 80%; margin: 0 auto; }
-        iframe { width: 100%; height: 500px; border: 1px solid #ccc; margin-top: 20px; }
-        .menu { margin: 20px 0; }
-        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
-        button:hover { background-color: #0056b3; }
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; text-align: center; padding: 50px; }
+        .container { width: 400px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        input[type="text"], input[type="password"], button, a { width: calc(100% - 20px); padding: 10px; margin-bottom: 20px; border-radius: 4px; border: 1px solid #ccc; display: block; margin-left: auto; margin-right: auto; }
+        input[type="text"], input[type="password"] { border: 1px solid #ccc; }
+        button, a { background-color: #007bff; color: #fff; text-decoration: none; border: none; cursor: pointer; text-align: center; }
+        button:hover, a:hover { background-color: #0056b3; }
+        .cancel { background-color: #dc3545; }
+        .cancel:hover { background-color: #c82333; }
+        .back { background-color: #28a745; }
+        .back:hover { background-color: #218838; }
+        .hidden { display: none; }
     </style>
-    <script>
-        function loadPage(page) {
-            document.getElementById('iframe-display').src = page;
-        }
-    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Sistema de Hospedagem - Protótipo</h1>
-        <div class="menu">
-            <button onclick="loadPage('login.html')">Tela de Login</button>
-            <button onclick="loadPage('checkin.html')">Tela de Check-in</button>
-            <button onclick="loadPage('checkout.html')">Tela de Check-out</button>
-            <button onclick="loadPage('reservas.html')">Gerenciamento de Reservas</button>
-        </div>
-        <iframe id="iframe-display" src="login.html"></iframe>
+
+    <!-- Tela de Login -->
+    <div class="container" id="login-screen">
+        <h2>Login</h2>
+        <input type="text" placeholder="Usuário" required><br>
+        <input type="password" placeholder="Senha" required><br>
+        <a href="#menu" onclick="showScreen('menu-screen')">Entrar</a>
     </div>
+
+    <!-- Tela de Menu Principal -->
+    <div class="container hidden" id="menu-screen">
+        <h2>Menu Principal</h2>
+        <a href="#checkin" onclick="showScreen('checkin-screen')">Check-in</a>
+        <a href="#checkout" onclick="showScreen('checkout-screen')">Check-out</a>
+        <a href="#reservas" onclick="showScreen('reservas-screen')">Gerenciamento de Reservas</a>
+        <a href="#login" onclick="showScreen('login-screen')">Logout</a>
+    </div>
+
+    <!-- Tela de Check-in -->
+    <div class="container hidden" id="checkin-screen">
+        <h2>Check-in</h2>
+        <input type="text" placeholder="Nome do hóspede" required><br>
+        <input type="text" placeholder="Documento de Identificação" required><br>
+        <input type="text" placeholder="Número do Quarto" required><br>
+        <input type="text" placeholder="Data de Entrada" required><br>
+        <a href="#menu" class="back" onclick="showScreen('menu-screen')">Voltar ao Menu Principal</a>
+    </div>
+
+    <!-- Tela de Check-out -->
+    <div class="container hidden" id="checkout-screen">
+        <h2>Check-out</h2>
+        <div class="info">
+            <p><strong>Hóspede:</strong> João Silva</p>
+            <p><strong>Quarto:</strong> 101</p>
+            <p><strong>Total de Despesas:</strong> R$ 500,00</p>
+        </div>
+        <a href="#menu" class="back" onclick="showScreen('menu-screen')">Voltar ao Menu Principal</a>
+        <a href="#menu" class="cancel" onclick="showScreen('menu-screen')">Cancelar Check-out</a>
+    </div>
+
+    <!-- Tela de Gerenciamento de Reservas -->
+    <div class="container hidden" id="reservas-screen">
+        <h2>Gerenciamento de Reservas</h2>
+        <a href="#menu" class="back" onclick="showScreen('menu-screen')">Voltar ao Menu Principal</a>
+    </div>
+
+    <script>
+        function showScreen(screenId) {
+            const screens = document.querySelectorAll('.container');
+            screens.forEach(screen => screen.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        // Exibe a tela inicial ao carregar
+        window.onload = function() {
+            showScreen('login-screen');
+        };
+    </script>
+
 </body>
 </html>
