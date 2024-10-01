@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Reservas - Sistema de Hospedagem</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; text-align: center; padding: 50px; }
+        .container { width: 600px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #007bff; color: #fff; }
+        button { width: 48%; padding: 10px; background-color: #28a745; color: #fff; border: none; border-radius: 4px; cursor: pointer; margin: 10px 1%; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Gerenciamento de Reservas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Status</th>
+                    <th>Data Entrada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>João Silva</td>
+                    <td>Ativa</td>
+                    <td>10/01/2024</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Maria Souza</td>
+                    <td>Finalizada</td>
+                    <td>05/01/2024</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="window.location.href='nova_reserva.html'">Nova Reserva</button>
+        <button type="button">Detalhar Reserva</button>
+        <button type="button" onclick="window.location.href='menu.html'">Voltar ao Menu Principal</button>
+    </div>
+</body>
+</html>

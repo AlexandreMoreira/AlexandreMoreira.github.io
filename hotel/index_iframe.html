@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Hospedagem - Protótipo</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        .container { width: 80%; margin: 0 auto; }
+        iframe { width: 100%; height: 500px; border: 1px solid #ccc; margin-top: 20px; }
+        .menu { margin: 20px 0; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background-color: #0056b3; }
+    </style>
+    <script>
+        function loadPage(page) {
+            document.getElementById('iframe-display').src = page;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Hospedagem - Protótipo</h1>
+        <div class="menu">
+            <button onclick="loadPage('login.html')">Tela de Login</button>
+            <button onclick="loadPage('checkin.html')">Tela de Check-in</button>
+            <button onclick="loadPage('checkout.html')">Tela de Check-out</button>
+            <button onclick="loadPage('reservas.html')">Gerenciamento de Reservas</button>
+        </div>
+        <iframe id="iframe-display" src="login.html"></iframe>
+    </div>
+</body>
+</html>
