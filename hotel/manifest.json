@@ -1,6 +1,6 @@
 {
-    "name": "Meu PWA",
-    "short_name": "PWA",
+    "name": "Sistema de Gestão de Hotel",
+    "short_name": "Hotel PWA",
     "start_url": "pwa.html",
     "display": "standalone",
     "background_color": "#ffffff",

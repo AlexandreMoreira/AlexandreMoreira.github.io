@@ -1,4 +1,5 @@
-const CACHE_NAME = 'pwa-static-cache-v1.0.1';
+const CACHE_NAME = 'hotel-static-cache-v1.0.1';
+
 const urlsToCache = [
     'pwa.html',
     'offline.html',
