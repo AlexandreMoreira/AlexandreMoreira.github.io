@@ -1,7 +1,7 @@
 {
-    "name": "Fazenda PWA",
-    "short_name": "Fazenda",
-    "start_url": "/fazenda/index.html",
+    "name": "Fazenda do PIM, via PWA",
+    "short_name": "Fazenda PIM",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",

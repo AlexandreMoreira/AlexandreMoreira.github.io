@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazenda PWA</title>
-    <link rel="manifest" href="/fazenda/manifest.json">
-    <link rel="icon" href="/fazenda/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body, html {
             margin: 0;
@@ -24,7 +24,7 @@
     <iframe src="https://sistema-da-fazenda.vercel.app/index.html" frameborder="0"></iframe>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/fazenda/service-worker.js')
+            navigator.serviceWorker.register('service-worker.js')
                 .then(registration => {
                     console.log('Service Worker registrado com sucesso:', registration);
                 })
