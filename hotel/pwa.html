@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel PWA</title>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/hotel/manifest.json">
+    <link rel="icon" href="/hotel/favicon.ico" type="image/x-icon">
     <style>
         body, html {
             margin: 0;
@@ -24,7 +24,7 @@
     <iframe src="https://alexandremoreira.github.io/hotel/index.html" frameborder="0"></iframe>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('/hotel/service-worker.js')
                 .then(registration => {
                     console.log('Service Worker registrado com sucesso:', registration);
                 })

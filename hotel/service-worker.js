@@ -1,11 +1,11 @@
 const CACHE_NAME = 'pwa-static-cache-v1';
 const urlsToCache = [
-    '/pwa.html',
-    '/offline.html',
-    '/manifest.json',
-    '/favicon.ico',
-    '/icon-192x192.png',
-    '/icon-512x512.png'
+    '/hotel/pwa.html',
+    '/hotel/offline.html',
+    '/hotel/manifest.json',
+    '/hotel/favicon.ico',
+    '/hotel/icon-192x192.png',
+    '/hotel/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -34,7 +34,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
     event.respondWith(
         fetch(event.request).catch(() => {
-            return caches.match('/offline.html');
+            return caches.match('/hotel/offline.html');
         })
     );
 });
