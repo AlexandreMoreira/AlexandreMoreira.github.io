@@ -1,6 +1,7 @@
 {
-    "name": "Sistema de Gestão da Fazenda Doce de Leite",
-    "short_name": "Fazenda Doce",
+    "name": "Sistema de Gestão da \nFazenda Doce de Leite",
+    "short_name": "Fazenda PWA",
+    "description": "Sistema de Gestão da Fazenda Doce de Leite",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",

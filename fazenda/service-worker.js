@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fazenda-static-cache-v1.0.2';
+const CACHE_NAME = 'fazenda-pwa-static-cache-v1.0.2';
 
 const urlsToCache = [
     'index.html',
